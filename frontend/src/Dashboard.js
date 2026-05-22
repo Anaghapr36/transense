@@ -3,11 +3,13 @@ import Map from "./components/Map";
 import BottomPanel from "./components/BottomPanel";
 import Search from "./components/Search";
 import BusCard from "./components/BusCard";
-import LocationSelector from "./components/LocationSelector";
+
 import LocationModal from "./components/LocationModal";
-import logo from "./assets/logo.png";
+import Header from "./components/Header";
+
+import transitLogo from "./logo.svg";
+// import { CITIES, CITY_STOPS, CITY_ROUTES, CITY_BUS_TEMPLATES, CITY_CENTERS, advanceBusLocation } from "./data/mockTransitData";
 import { 
-  CITIES, 
   CITY_STOPS, 
   CITY_ROUTES, 
   CITY_BUS_TEMPLATES, 
@@ -474,23 +476,8 @@ function Dashboard({ user, logout }) {
 
           {/* FLOATING HEADER PANEL */}
           <div className="floating-header-panel">
-            {!searchTriggered ? (
-              <div className="floating-bmtc-branding">
-                <div className="logo-badge">
-                  <img src={logo} alt="TransitSense Logo" />
-                </div>
-                <div className="brand-meta">
-                  <strong>TransitSense</strong>
-                  <span>Live Tracking Portal</span>
-                </div>
-                
-                {/* Mobile Dynamic Location Selector */}
-                <LocationSelector 
-                  selectedCity={selectedCity} 
-                  onClick={() => setIsLocationModalOpen(true)} 
-                />
-              </div>
-            ) : (
+            <Header selectedCity={selectedCity} onLocationClick={() => setIsLocationModalOpen(true)} />
+            {searchTriggered && (
               <div className="active-route-indicator-bar">
                 <div className="active-route-detail">
                   <span className="route-circle">🎯</span>
@@ -825,10 +812,7 @@ function Dashboard({ user, logout }) {
           </div>
           <div className="toggle-divider"></div>
           <div className="toggle-group">
-            <LocationSelector 
-              selectedCity={selectedCity} 
-              onClick={() => setIsLocationModalOpen(true)} 
-            />
+
           </div>
         </div>
 
@@ -855,31 +839,31 @@ function Dashboard({ user, logout }) {
         <div className="grid-overlay"></div>
       </div>
 
-      {/* Combined top nav bar for View Mode & BookMyShow Selector */}
-      <div className="view-mode-toggle-bar">
-        <div className="toggle-group">
-          <button className={`view-mode-btn ${viewMode === "mobile" ? "active" : ""}`} onClick={() => setViewMode("mobile")}>
-            📱 Mobile App
-          </button>
-          <button className={`view-mode-btn ${viewMode === "desktop" ? "active" : ""}`} onClick={() => setViewMode("desktop")}>
-            🖥️ Widescreen
-          </button>
-        </div>
-        <div className="toggle-divider"></div>
-        <div className="toggle-group">
-          <LocationSelector 
-            selectedCity={selectedCity} 
-            onClick={() => setIsLocationModalOpen(true)} 
-          />
-        </div>
-      </div>
-
       <div className="desktop-dashboard-container">
+        {/* HEADER */}
+        <Header selectedCity={selectedCity} onLocationClick={() => setIsLocationModalOpen(true)} />
+
+        {/* Combined top nav bar for View Mode & BookMyShow Selector */}
+        <div className="view-mode-toggle-bar">
+          <div className="toggle-group">
+            <button className={`view-mode-btn ${viewMode === "mobile" ? "active" : ""}`} onClick={() => setViewMode("mobile")}>
+              📱 Mobile App
+            </button>
+            <button className={`view-mode-btn ${viewMode === "desktop" ? "active" : ""}`} onClick={() => setViewMode("desktop")}>
+              🖥️ Widescreen
+            </button>
+          </div>
+          <div className="toggle-divider"></div>
+          <div className="toggle-group">
+
+          </div>
+        </div>
+
         {/* SIDEBAR PANEL */}
         <div className="desktop-sidebar">
           <div className="desktop-sidebar-header">
             <div className="brand-logo-glow">
-              <img src={logo} alt="TransitSense" className="portal-logo" />
+              <img src={transitLogo} alt="TransitSense" className="portal-logo" />
             </div>
             <div className="brand-title-wrap">
               <h2>TransitSense</h2>

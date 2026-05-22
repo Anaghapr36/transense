@@ -1,15 +1,14 @@
 import React from "react";
 
-function BottomPanel({
-  sheetState,
-  setSheetState,
-  activeTab,
+function BottomSheet({ 
+  sheetState, 
+  setSheetState, 
+  activeTab, 
   setActiveTab,
   selectedBus,
   onCloseDetails,
   children
 }) {
-
   // Toggle heights: Collapsed (80px), Half (40%), Full (85%)
   const cycleState = () => {
     if (sheetState === "collapsed") {
@@ -29,28 +28,22 @@ function BottomPanel({
     <div className={`bottom-sheet ${sheetState}`}>
       {/* DRAG HANDLE BAR */}
       <div className="sheet-handle-container" onClick={cycleState}>
-        <div className="sheet-handle"></div>
+        <div className="sheet-handle"/>
       </div>
 
       {/* HEADER SECTION */}
       <div className="sheet-header">
         {!selectedBus ? (
           <div className="tab-menu">
-            <button
+            <button 
               className={`tab-btn ${activeTab === "explore" ? "active" : ""}`}
-              onClick={() => {
-                setActiveTab("explore");
-                if (sheetState === "collapsed") setHalf();
-              }}
+              onClick={() => { setActiveTab("explore"); if (sheetState === "collapsed") setHalf(); }}
             >
               📍 Nearby Buses
             </button>
-            <button
+            <button 
               className={`tab-btn ${activeTab === "search" ? "active" : ""}`}
-              onClick={() => {
-                setActiveTab("search");
-                if (sheetState === "collapsed") setHalf();
-              }}
+              onClick={() => { setActiveTab("search"); if (sheetState === "collapsed") setHalf(); }}
             >
               🔍 Plan Route
             </button>
@@ -62,7 +55,7 @@ function BottomPanel({
             </button>
             <div className="details-header-title">
               <span className="selected-route-pill">Route {selectedBus.routeNo}</span>
-              <span className="live-pulse-dot"></span> Live Tracking
+              <span className="live-pulse-dot"/> Live Tracking
             </div>
           </div>
         )}
@@ -90,4 +83,4 @@ function BottomPanel({
   );
 }
 
-export default BottomPanel;
+export default BottomSheet;

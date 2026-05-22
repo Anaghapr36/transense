@@ -15,17 +15,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #120f0a;
+  background: var(--bg-primary);
 }
 
 .login-container {
+  background: var(--bg-primary);
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top left, rgba(255, 165, 45, 0.18), transparent 20%),
-    radial-gradient(circle at bottom right, rgba(255, 120, 0, 0.14), transparent 24%),
-    linear-gradient(180deg, #14100c 0%, #1f140a 45%, #2c1c0f 100%);
+  justify-content: center;
   padding: 20px;
   position: relative;
   overflow: hidden;
@@ -66,10 +64,10 @@ body {
 }
 
 .login-card {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 24px;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-card);
   width: 100%;
   max-width: 450px;
   padding: 52px 42px;
@@ -130,7 +128,7 @@ body {
 }
 
 .logo-section h1 {
-  font-size: 30px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   font-weight: 700;
   color: #102b43;
   margin: 10px 0 6px;
@@ -139,7 +137,7 @@ body {
 
 .tagline {
   color: #5e6d7a;
-  font-size: 14px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   font-weight: 500;
   line-height: 1.6;
 }
@@ -158,7 +156,7 @@ body {
 }
 
 .form-section h2 {
-  font-size: 24px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   font-weight: 700;
   color: #102b43;
   margin-bottom: 7px;
@@ -166,7 +164,7 @@ body {
 
 .subtitle {
   color: #5e6d7a;
-  font-size: 14px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   margin-bottom: 32px;
   line-height: 1.7;
 }
@@ -177,7 +175,7 @@ body {
 
 .form-group label {
   display: block;
-  font-size: 13px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   font-weight: 600;
   color: #333;
   margin-bottom: 8px;
@@ -192,7 +190,7 @@ body {
 }
 
 .forgot-link {
-  font-size: 12px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   color: #667eea;
   text-decoration: none;
   font-weight: 600;
@@ -212,7 +210,7 @@ body {
 .input-icon {
   position: absolute;
   left: 14px;
-  font-size: 16px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   color: #999;
   pointer-events: none;
 }
@@ -222,7 +220,7 @@ body {
   padding: 14px 14px 14px 44px;
   border: 1px solid #d9e3ef;
   border-radius: 12px;
-  font-size: 15px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   transition: all 0.25s ease;
   font-family: inherit;
   background: #f4f7fb;
@@ -245,7 +243,7 @@ body {
   align-items: center;
   gap: 8px;
   margin: 22px 0;
-  font-size: 13px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
 }
 
 .checkbox-group input {
@@ -260,7 +258,7 @@ body {
   cursor: pointer;
   color: #666;
   margin: 0;
-  font-size: 13px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   text-transform: none;
   letter-spacing: normal;
   font-weight: 500;
@@ -273,7 +271,7 @@ body {
   border-radius: 8px;
   margin-bottom: 20px;
   border-left: 4px solid #d32f2f;
-  font-size: 13px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -287,7 +285,7 @@ body {
 }
 
 .error-icon {
-  font-size: 16px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
 }
 
 .login-btn {
@@ -298,7 +296,7 @@ body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 15px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   margin-bottom: 22px;
@@ -328,7 +326,7 @@ body {
   text-align: center;
   margin: 28px 0 24px;
   position: relative;
-  font-size: 13px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   color: #7a8ca6;
 }
 
@@ -343,7 +341,7 @@ body {
 }
 
 .divider span {
-  background: white;
+  background: var(--card-bg);
   padding: 0 12px;
   color: #999;
   font-weight: 500;
@@ -368,7 +366,7 @@ body {
 
 .footer-text p {
   text-align: center;
-  font-size: 13px;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   color: #666;
   margin-bottom: 8px;
 }
@@ -386,7 +384,7 @@ body {
 }
 
 .terms {
-  font-size: 11px !important;
+  font-size:  [math]::Round([double]$args[0].Value * 1.4) px !important;
   color: #999 !important;
   margin-bottom: 0 !important;
 }
@@ -409,11 +407,11 @@ body {
   }
 
   .logo-section h1 {
-    font-size: 28px;
+    font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   }
 
   .form-section h2 {
-    font-size: 20px;
+    font-size:  [math]::Round([double]$args[0].Value * 1.4) px;
   }
 
   .login-container::before {

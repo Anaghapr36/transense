@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import ErrorBoundary from './ErrorBoundary';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./Theme.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
+const GOOGLE_CLIENT_ID = "YOUR_CLIENT_ID.apps.googleusercontent.com"; // TODO: replace with actual client ID
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
 root.render(
   <React.StrictMode>
-    <ErrorBoundary>
-      <GoogleOAuthProvider clientId="663180715742-g30j16c9a3a61hqajpqi5llkppd6vl8a.apps.googleusercontent.com">
-        <App />
-      </GoogleOAuthProvider>
-    </ErrorBoundary>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <App />
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
+
+reportWebVitals();

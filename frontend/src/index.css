@@ -1,13 +1,44 @@
-body {
+/* Global Reset and Box Sizing */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+/* Theme Variables (Light Theme) */
+:root {
+  --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+  --secondary-glow: linear-gradient(to bottom right, rgba(1, 65, 255, 0), rgba(1, 65, 255, 0), rgba(1, 65, 255, 0.3));
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --glass-bg: rgba(18, 25, 41, 0.78);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.09);
+  --bg-primary: #f3f4f6; /* Light background */
+  --card-bg: #ffffff;
+  --card-hover-bg: rgba(33, 44, 71, 0.95);
+  --text-primary: #111827; /* Dark text */
+  --text-secondary: #4b5563;
+  --text-muted: #64748b;
+  --accent-orange: #ff5e00;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Base Typography */
+body {
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

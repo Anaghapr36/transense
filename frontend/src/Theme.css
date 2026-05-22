@@ -1,0 +1,112 @@
+/* Theme.css – Light theme for TransitSense */
+:root {
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #f9fafb;
+  --card-bg: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --accent: #ff5e00;
+  --border: #e5e7eb;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --dashboard-bg: #001f3f;
+  /* dark navy blue for dashboard */
+  --bg-primary: #f3f4f6;
+  /* soft light grey */
+  --card-bg: #ffffff;
+  /* white cards */
+  --text-primary: #111827;
+  /* dark grey */
+  --text-secondary: #4b5563;
+  /* medium grey */
+  --accent-orange: #ff5e00;
+  /* branding orange */
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  /* map takes full screen */
+}
+
+/* Card style used for bus cards, bottom sheet, etc. */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  padding: 12px 16px;
+}
+
+/* Primary button style */
+.btn-primary {
+  background: var(--accent-orange);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #e65500;
+}
+
+/* Header bar */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+/* Bottom sheet */
+.bottom-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70vh;
+  /* max height when expanded */
+  transform: translateY(70vh);
+  /* start collapsed */
+  transition: transform 0.35s ease-in-out;
+  z-index: 1000;
+}
+
+.bottom-sheet.expanded {
+  transform: translateY(0);
+}
+
+.bottom-sheet.half {
+  transform: translateY(40vh);
+}
+
+/* Drag handle */
+.sheet-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  margin: 8px auto;
+}
